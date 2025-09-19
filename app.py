@@ -69,8 +69,8 @@ peak_hours = data.groupby("Hours").agg(
 # -----------------------
 # Dashboard Layout
 # -----------------------
-st.title("📊 Online Retail Dashboard")
-st.markdown("Interactive dashboard powered by **processed data**")
+st.title("📊 Online Retail Store Dashboard")
+
 
 # Monthly Sales
 fig1 = px.line(monthly_sales,x="Month",y="Total_Sales",labels={"Month": "Month", "Total_Sales": "Total Sales"}
@@ -89,7 +89,7 @@ fig3 = px.bar(product_sales, x="Description", y="Total_Sales",color="Description
 st.plotly_chart(fig3, use_container_width=True)
 
 # Trending Products
-st.subheader("Trending Products (Most Sold Month)")
+st.subheader("Trending Products")
 fig4 = px.bar(trending_product.head(10), x="Description", y="Month",color="Description",color_discrete_sequence=px.colors.qualitative.Bold)
 st.plotly_chart(fig4, use_container_width=True)
 
